@@ -1,335 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audra Nesia Pratidina | Corporate Planning & Performance Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #0b131e;
-            --bg-secondary: #121d2f;
-            --bg-card: #18263c;
-            --accent-teal: #00b4d8;
-            --accent-orange: #f4a261;
-            --text-main: #f8f9fa;
-            --text-muted: #94a3b8;
-            --border-color: #233554;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .hero-profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-teal);
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.2);
-        }
-
-        .hero-tag {
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent-teal);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .hero-meta {
-            font-weight: 600;
-            color: var(--text-main);
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        section {
-            border-top: 1px solid var(--border-color);
-            padding: 6rem 0;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: baseline;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .section-number {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--accent-teal);
-            letter-spacing: 1px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 600;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            position: relative;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-teal);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: var(--accent-teal);
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-        }
-
-        .card.orange::before {
-            background-color: var(--accent-orange);
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Tables & Data Lists */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: var(--bg-card);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 1.5rem;
-        }
-
-        th, td {
-            padding: 1rem 1.25rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.95rem;
-        }
-
-        th {
-            background-color: rgba(0, 180, 216, 0.1);
-            color: var(--accent-teal);
-            font-weight: 600;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .badge.watch { background-color: rgba(244, 162, 97, 0.2); color: var(--accent-orange); }
-        .badge.action { background-color: rgba(239, 68, 68, 0.2); color: #ef4444; }
-        .badge.track { background-color: rgba(0, 180, 216, 0.2); color: var(--accent-teal); }
-        .badge.done { background-color: rgba(34, 197, 94, 0.2); color: #22c55e; }
-
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-box {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .stat-box .number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-teal);
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-box .label {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        footer {
-            background-color: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-muted);
-        }
-
-        footer h2 {
-            color: var(--text-main);
-            margin-bottom: 1.0rem;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b2b4a">
+  <meta name="description" content="Selected works portfolio — Corporate Planning, Business Performance & Strategic PMO">
+  <title>Audra Nesia Pratidina — Professional Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header id="toolbar" aria-label="Portfolio navigation">
+ <div class="toolbar-brand"><span class="mark"></span><strong>ANP</strong><span class="toolbar-sep"></span><span>Professional Portfolio</span></div>
+ <div class="toolbar-actions"><button type="button" id="prev" title="Previous slide" aria-label="Previous slide">←</button><span id="counter">01 / 12</span><button type="button" id="next" title="Next slide" aria-label="Next slide">→</button><button type="button" id="overview" title="Show all slides">Overview</button><a class="download-btn" href="Audra_Nesia_Pratidina_Portfolio_12_Slides.pdf" download title="Download the completed PDF">Download PDF ↓</a><button type="button" id="print" class="primary" title="Print the deck">Print ↗</button></div>
+</header>
+<main id="deck" aria-label="Portfolio slides">
 
-    <!-- HERO SECTION -->
-    <header>
-        <img src="profile.jpg" alt="Audra Nesia Pratidina" class="hero-profile-img">
-        <div class="hero-tag">Selected Works / 2015–2026</div>
-        <h1>Corporate Planning &amp; Performance Portfolio</h1>
-        <p class="hero-subtitle">Strategic PMO | Management Reporting | Regulatory Disclosure</p>
-        <div class="hero-meta">AUDRA NESIA PRATIDINA</div>
-    </header>
+<section class="slide cover" data-title="Cover" aria-label="Slide 1, Cover">
+  <div class="cover-shape"></div><div class="cover-diagonal"></div>
+  <div class="cover-text">
+    <div class="cover-mini"><i></i> SELECTED WORKS &amp; RESPONSIBILITIES</div>
+    <h1>AUDRA NESIA<br>PRATIDINA</h1>
+    <div class="cover-subtitle">Corporate Planning <span>|</span> Business Performance <span>|</span> Strategic PMO</div>
+    <div class="rule"></div>
+    <div class="cover-overline">PROFESSIONAL PORTFOLIO</div>
+    <p>Combining project-level operational understanding with enterprise-level performance governance, analytical reporting, and executive communication.</p>
+    <div class="cover-foot"><span class="teal-mark"></span> SELECTED CASE STUDIES <span class="faint">/</span> SYNTHETIC DATA ONLY</div>
+  </div>
+  <div class="portrait-frame"><img src="assets/portrait.jpg" alt="Professional portrait of Audra Nesia Pratidina"></div>
+</section>
 
-    <div class="container">
+<section class="slide" data-title="Professional Profile">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">PROFILE / PROFESSIONAL BACKGROUND</div><h2>Professional Profile &amp; Career Journey</h2><p>From project operations to enterprise-level business performance management</p></div>
+ <div class="profile-intro boxline">Corporate planning and performance professional with <b>10+ years of experience</b> across commercial operations, project controls, corporate planning, strategic monitoring and investor-related reporting in a publicly listed construction company.</div>
+ <div class="timeline-line" aria-label="Career timeline">
+   <div class="career"><span class="point"></span><b class="year">2015–2018</b><strong>Commercial &amp;<br>Project Administration</strong><p>Contracts, documentation and coordination.</p></div>
+   <div class="career"><span class="point"></span><b class="year">2018–2020</b><strong>Project Planning<br>&amp; Control</strong><p>Progress, schedules, cost and project checkpoints.</p></div>
+   <div class="career"><span class="point"></span><b class="year">2020–2025</b><strong>Strategic Control<br>&amp; Planning</strong><p>RKAP, KPIs, variance analysis and management reviews.</p></div>
+   <div class="career"><span class="point navy"></span><b class="year">2026</b><strong>Investor Relations<br>&amp; Reporting</strong><p>Executive reporting, disclosures and reconciliation.</p></div>
+ </div>
+ <div class="four-cards profile-cards"><div class="small-card"><span class="mini-icon">▥</span><strong>Corporate Planning</strong><small>Planning assumptions &amp; target consolidation</small></div><div class="small-card"><span class="mini-icon">↗</span><strong>Performance Control</strong><small>KPI monitoring, issues &amp; variance insights</small></div><div class="small-card"><span class="mini-icon">▤</span><strong>Executive Reporting</strong><small>Decision-ready management summaries</small></div><div class="small-card"><span class="mini-icon">◎</span><strong>Capital Market Support</strong><small>Reporting quality &amp; disclosures</small></div></div>
+</section>
 
-        <!-- 01 PROFILE -->
-        <section id="profile">
-            <div class="section-header">
-                <span class="section-number">01</span>
-                <h2>Profile &amp; Positioning</h2>
-            </div>
-            <p style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 2rem;">Bridging operations, corporate planning &amp; executive decisions. A cross-functional background spanning project controls, performance governance and reporting.</p>
-            <div class="stats-row">
-                <div class="stat-box">
-                    <div class="number">10+ yrs</div>
-                    <div class="label">Experience</div>
-                </div>
-                <div class="stat-box">
-                    <div class="number">13 units</div>
-                    <div class="label">Corporate KPI Coordination</div>
-                </div>
-                <div class="stat-box">
-                    <div class="number">4 layers</div>
-                    <div class="label">Project Enterprise Scope</div>
-                </div>
-            </div>
-            <div class="card" style="margin-top: 2rem;">
-                <h3>My Positioning</h3>
-                <p>From operational data and budget assumptions to management-ready performance insights, issue escalation and execution follow-through.</p>
-            </div>
-        </section>
+<section class="slide" data-title="Scope of Work">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">OPERATING MODEL / RESPONSIBILITIES</div><h2>Scope of Work &amp; Core Responsibilities</h2><p>End-to-end workstreams spanning planning, control, reporting and stakeholder communication</p></div>
+ <div class="scope-layout">
+  <div class="scope-grid">
+    <article class="scope-card"><div class="scope-icon">▥</div><div><h3>Corporate Planning &amp; RKAP</h3><ul><li>Coordinate annual business planning submissions and assumptions</li><li>Consolidate divisional financial and operational targets</li><li>Review variances, scenarios and management inputs</li><li>Prepare planning and management review materials</li></ul></div></article>
+    <article class="scope-card"><div class="scope-icon">↗</div><div><h3>KPI Governance &amp; Monitoring</h3><ul><li>Coordinate KPI formulation and performance monitoring</li><li>Consolidate cross-divisional actual-versus-plan data</li><li>Flag material variances, emerging issues and risks</li><li>Support follow-up actions and tracking</li></ul></div></article>
+    <article class="scope-card"><div class="scope-icon">▤</div><div><h3>Executive &amp; Board Reporting</h3><ul><li>Prepare performance review and briefing packs</li><li>Translate detailed information into concise narratives</li><li>Highlight issues, trends and actions requiring attention</li><li>Coordinate supporting inputs across functions</li></ul></div></article>
+    <article class="scope-card"><div class="scope-icon">⌁</div><div><h3>Disclosure &amp; Investor Support</h3><ul><li>Consolidate and reconcile reporting inputs</li><li>Contribute to Annual Report and earnings materials</li><li>Support regulatory and XBRL reporting processes</li><li>Check consistency across financial disclosures</li></ul></div></article>
+  </div>
+  <aside class="outputs"><div class="section-mini">TYPICAL DELIVERABLES</div><div class="output-item"><em>▥</em><div><b>Planning models</b><small>RKAP schedules &amp; scenarios</small></div></div><div class="output-item"><em>▤</em><div><b>KPI scorecards</b><small>Target, actual, variance, RAG</small></div></div><div class="output-item"><em>▧</em><div><b>Executive dashboards</b><small>Financial and operational views</small></div></div><div class="output-item"><em>◫</em><div><b>Board presentation packs</b><small>Key insights &amp; management actions</small></div></div><div class="output-item"><em>☑</em><div><b>Disclosure checklists</b><small>Source integrity and filing support</small></div></div></aside>
+ </div>
+ <div class="process-ribbon"><span>PLAN <small>Targets &amp; assumptions</small></span><span>MONITOR <small>Track actuals</small></span><span>ANALYZE <small>Drivers &amp; risks</small></span><span>REPORT <small>Management insight</small></span><span>FOLLOW-UP <small>Owners &amp; actions</small></span></div>
+</section>
 
-        <!-- 02 JOURNEY -->
-        <section id="journey">
-            <div class="section-header">
-                <span class="section-number">02</span>
-                <h2>Career Journey</h2>
-            </div>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Career progression: operational depth to enterprise visibility. Each transition extended the scope of planning, control, analysis and stakeholder communication.</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>2015–18</h3>
-                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Commercial &amp; Project Admin</p>
-                    <p>Contracts documentation and baseline commercial support.</p>
-                </div>
-                <div class="card">
-                    <h3>2018–20</h3>
-                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Project Planning &amp; Control</p>
-                    <p>Progress cost schedule tracking and operational milestone management.</p>
-                </div>
-                <div class="card">
-                    <h3>2020–25</h3>
-                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Strategic Control / Planning</p>
-                    <p>RKAP preparation, cross-unit KPI reviews and strategic variance tracking.</p>
-                </div>
-                <div class="card">
-                    <h3>2026</h3>
-                    <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: 0.5rem;">Investor Relations</p>
-                    <p>Disclosures, investor decks and governance communications.</p>
-                </div>
-            </div>
-        </section>
+<section class="slide" data-title="Corporate Planning & RKAP">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">CASE STUDY 01 / CORPORATE PLANNING</div><h2>Corporate Planning &amp; RKAP Coordination</h2><p>Converting business-unit assumptions into consolidated targets and scenarios</p></div>
+ <div class="case-top"><div class="case-context"><h3>Business Context</h3><p>Annual planning involves multiple units, inconsistent assumptions and a need for clear scenario comparison.</p><h3>My Contribution</h3><p>Coordinated input collection, reviewed assumptions and planning gaps, consolidated targets and prepared management discussion materials.</p></div><div class="case-main"><div class="process-five"><span>BUSINESS<br>ASSUMPTIONS</span><span>UNIT<br>SUBMISSIONS</span><span>PLAN<br>CONSOLIDATION</span><span>SCENARIO<br>STRESS TEST</span><span>MANAGEMENT<br>REVIEW</span></div><div class="two-panels rkapanalysis"><div class="panel"><div class="panel-title">ILLUSTRATIVE PLANNING TABLE <small>IDR bn · invented figures</small></div><table class="data-table"><thead><tr><th>Business unit</th><th>Base plan</th><th>Downside</th><th>Stretch</th><th>RAG</th></tr></thead><tbody><tr><td>Division Alpha</td><td>345</td><td>310</td><td>365</td><td><span class="rag green">●</span></td></tr><tr><td>Division Beta</td><td>285</td><td>256</td><td>310</td><td><span class="rag amber">●</span></td></tr><tr><td>Division Gamma</td><td>240</td><td>215</td><td>268</td><td><span class="rag green">●</span></td></tr><tr><td>Division Delta</td><td>210</td><td>190</td><td>232</td><td><span class="rag red">●</span></td></tr><tr class="total"><td>TOTAL</td><td>1,080</td><td>971</td><td>1,175</td><td>—</td></tr></tbody></table></div><div class="panel"><div class="panel-title">QUARTERLY REVENUE OUTLOOK <small>IDR bn · invented figures</small></div><div class="chart" data-chart="scenario"></div><div class="chart-legend"><i class="swatch navy"></i>Base case <i class="swatch teal"></i>Stretch case</div></div></div></div></div>
+ <div class="impact-bar"><b>SELECTED OUTPUTS</b><span>Target consolidation workbook</span><span>Assumption register</span><span>Scenario analysis</span><span>Management review deck</span></div>
+</section>
 
-        <!-- 03 FRAMEWORK -->
-        <section id="framework">
-            <div class="section-header">
-                <span class="section-number">03</span>
-                <h2>Integrated Business Framework</h2>
-            </div>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">A repeatable logic for aligning target setting, analysis, decisions, and execution.</p>
-            <div class="grid-3">
-                <div class="card"><h3>01. PLAN</h3><p>Budget / RKAP formulation</p></div>
-                <div class="card"><h3>02. CASCADE</h3><p>Targets &amp; KPI deployment</p></div>
-                <div class="card"><h3>03. MONITOR</h3><p>Actual vs plan tracking</p></div>
-                <div class="card"><h3>04. DIAGNOSE</h3><p>Variance / risk assessment</p></div>
-                <div class="card"><h3>05. DECIDE</h3><p>Management review &amp; value</p></div>
-                <div class="card orange"><h3>06. FOLLOW UP</h3><p>Action items &amp; owner accountability</p>
+<section class="slide" data-title="KPI Governance">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">CASE STUDY 02 / PERFORMANCE GOVERNANCE</div><h2>KPI Governance &amp; Performance Monitoring</h2><p>Building a common performance language across business and functional units</p></div>
+ <div class="metric-grid"><div class="metric"><small>REVENUE ATTAINMENT</small><strong>92%</strong><span class="up">▲ +6 pp <i>vs. prior period</i></span></div><div class="metric"><small>NEW CONTRACTS</small><strong>18</strong><span class="up">▲ +3 <i>vs. prior period</i></span></div><div class="metric"><small>CASH CONVERSION</small><strong>78%</strong><span class="up">▲ +4 pp <i>vs. prior period</i></span></div><div class="metric"><small>ON-TIME DELIVERY</small><strong>86%</strong><span class="down">▼ −2 pp <i>vs. prior period</i></span></div></div>
+ <div class="three-column kpi-columns"><div class="panel scope-notes"><div class="panel-title">MY MONITORING ROLE</div><div class="note-line"><em>01</em><div><b>Coordinate data</b><small>Consolidate actual performance from multiple units</small></div></div><div class="note-line"><em>02</em><div><b>Review variance</b><small>Compare actual vs target and identify key gaps</small></div></div><div class="note-line"><em>03</em><div><b>Track RAG status</b><small>Highlight watchlists and potential escalations</small></div></div><div class="note-line"><em>04</em><div><b>Log follow-ups</b><small>Record agreed owners, deadlines and evidence</small></div></div></div>
+ <div class="panel"><div class="panel-title">MONTHLY PERFORMANCE TREND <small>Index · illustrative</small></div><div class="chart" data-chart="monthly"></div><div class="chart-legend"><i class="swatch navy"></i>Actual <i class="swatch teal"></i>Target</div></div><div class="panel"><div class="panel-title">SAMPLE CROSS-FUNCTION SCORECARD</div><table class="data-table compact"><thead><tr><th>Function</th><th>Index</th><th>Status</th><th>Action</th></tr></thead><tbody><tr><td>Commercial</td><td>106</td><td><span class="chip ok">On Track</span></td><td>Continue</td></tr><tr><td>Operations</td><td>91</td><td><span class="chip warn">Watch</span></td><td>Cost review</td></tr><tr><td>Finance</td><td>103</td><td><span class="chip ok">On Track</span></td><td>Maintain</td></tr><tr><td>Risk</td><td>88</td><td><span class="chip warn">Watch</span></td><td>Mitigate</td></tr><tr><td>Digital</td><td>76</td><td><span class="chip risk">At Risk</span></td><td>Escalate</td></tr></tbody></table></div></div>
+ <div class="tracker-strip"><div class="track-label">SYNTHETIC ACTION TRACKER</div><div class="tracker okay"><span>✓</span><b>7</b><small>On Track</small></div><div class="tracker caution"><span>!</span><b>4</b><small>Watchlist</small></div><div class="tracker alert"><span>△</span><b>3</b><small>Action Required</small></div></div>
+</section>
+
+<section class="slide" data-title="Performance Analysis">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">CASE STUDY 03 / BUSINESS ANALYSIS</div><h2>Business Performance: From Variance to Action</h2><p>Translating performance gaps into interpretable drivers and follow-up actions</p></div>
+ <div class="metric-grid four"><div class="metric"><small>REVENUE PLAN</small><strong>500</strong><span>Illustrative units</span></div><div class="metric"><small>REVENUE ACTUAL</small><strong>438</strong><span>87.6% of plan</span></div><div class="metric accent-red"><small>VARIANCE</small><strong>−62</strong><span>−12.4% vs. plan</span></div><div class="metric"><small>DRIVERS EXPLAINED</small><strong>3</strong><span>Hypothetical causes</span></div></div>
+ <div class="panel variance-panel"><div class="panel-title">REVENUE BRIDGE / DEMONSTRATION <small>Illustrative units · not actual company results</small></div><div class="chart bigchart" data-chart="bridge"></div></div>
+ <div class="three-column analytic-actions"><div class="bottom-insight"><b>01 / IDENTIFY</b><p>Break a headline variance into measurable drivers instead of repeating the total gap.</p></div><div class="bottom-insight"><b>02 / INTERPRET</b><p>Distinguish execution delays, revenue recognition timing, and baseline assumptions.</p></div><div class="bottom-insight"><b>03 / FOLLOW THROUGH</b><p>Develop an issue log with management questions, accountable owners and target dates.</p></div></div>
+</section>
+
+<section class="slide" data-title="Strategic PMO">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">CASE STUDY 04 / STRATEGIC CONTROL</div><h2>Strategic PMO &amp; Management Follow-up</h2><p>Keeping initiative progress, ownership, blockers and escalation visible</p></div>
+ <div class="portfolio-status"><div class="portfolio-intro"><div class="section-mini">SYNTHETIC PROGRAM STATUS</div><strong>16</strong><small>illustrative initiatives</small></div><div class="stack-bar"><span style="width:37.5%;background:#1b987e"></span><span style="width:43.75%;background:#e2a53a"></span><span style="width:18.75%;background:#d45c64"></span></div><div class="bar-labels"><b><i class="swatch green"></i> 6 Complete</b><b><i class="swatch amber"></i> 7 In Progress</b><b><i class="swatch red"></i> 3 At Risk</b></div></div>
+ <div class="panel pmotable"><div class="panel-title">QUARTERLY INITIATIVE ROADMAP <small>Illustrative milestones</small></div><table class="gantt-table"><thead><tr><th>Initiative</th><th>Owner</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Status</th></tr></thead><tbody><tr><td>Reporting framework</td><td>Corp. Planning</td><td class="g completed"></td><td class="g completed"></td><td></td><td></td><td><span class="chip ok">Complete</span></td></tr><tr><td>Project checkpoint rollout</td><td>PMO</td><td></td><td class="g active"></td><td class="g active"></td><td></td><td><span class="chip warn">Watch</span></td></tr><tr><td>KPI taxonomy refresh</td><td>Performance</td><td></td><td class="g active"></td><td class="g active"></td><td class="g active"></td><td><span class="chip ok">On Track</span></td></tr><tr><td>Management action tracker</td><td>Strategic Control</td><td></td><td></td><td class="g delayed"></td><td class="g delayed"></td><td><span class="chip risk">At Risk</span></td></tr></tbody></table></div>
+ <div class="two-panels decision-panels"><div class="panel"><div class="panel-title">ISSUE AND ESCALATION LOG</div><table class="data-table compact"><thead><tr><th>Issue</th><th>Owner</th><th>Next action</th><th>Status</th></tr></thead><tbody><tr><td>Delayed KPI input</td><td>Performance</td><td>Confirm cadence</td><td><span class="chip warn">Open</span></td></tr><tr><td>Milestone slippage</td><td>PMO</td><td>Rebaseline</td><td><span class="chip risk">Escalate</span></td></tr><tr><td>Source validation</td><td>Finance</td><td>Complete check</td><td><span class="chip ok">On Track</span></td></tr></tbody></table></div><div class="panel" style="padding:18px 21px"><div class="panel-title">MY RESPONSIBILITY</div><p class="responsibility-paragraph">Maintained trackers, consolidated implementation updates, highlighted overdue items and prepared structured follow-ups for review forums.</p><div class="case-takeaway"><b>BUSINESS VALUE</b><span>Greater visibility of progress and accountabilities — not a claim that the illustrative metrics were achieved.</span></div></div></div>
+</section>
+
+<section class="slide" data-title="Project Controls">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">CASE STUDY 05 / OPERATIONAL CONTROL</div><h2>Project Planning, Progress &amp; Cost Monitoring</h2><p>Connecting schedule checkpoints, implementation progress and budget utilization</p></div>
+ <div class="project-layout"><div class="panel s-curve-panel"><div class="panel-title">PHYSICAL PROGRESS / S-CURVE <small>Planned vs. actual · synthetic sample</small></div><div class="chart" data-chart="scurve"></div><div class="chart-legend"><i class="swatch navy"></i>Planned progress <i class="swatch teal"></i>Actual progress</div></div><div class="project-kpis"><div class="stat-kpi"><small>PHYSICAL PROGRESS</small><strong>91%</strong><p>At the illustrated checkpoint</p></div><div class="stat-kpi danger"><small>SCHEDULE VARIANCE</small><strong>−9 pp</strong><p>Actual vs. planned milestone</p></div><div class="stat-kpi"><small>COST UTILIZATION</small><strong>82%</strong><p>Share of illustrated approved budget</p></div></div></div>
+ <div class="panel project-table"><div class="panel-title">ILLUSTRATIVE PROJECT CONTROL SUMMARY</div><table class="data-table"><thead><tr><th>Project</th><th>Physical progress</th><th>Cost used / budget</th><th>Checkpoint finding</th><th>Follow-up</th></tr></thead><tbody><tr><td>Project Alpha</td><td>91%</td><td>82%</td><td>Milestone recovery needed</td><td>Recovery schedule</td></tr><tr><td>Project Beta</td><td>84%</td><td>79%</td><td>Procurement delay</td><td>Supplier coordination</td></tr><tr><td>Project Gamma</td><td>76%</td><td>80%</td><td>Cost pressure</td><td>Cost reforecast</td></tr></tbody></table></div>
+ <div class="impact-bar"><b>MY CONTRIBUTION</b><span>Progress consolidation</span><span>Cost and schedule variance</span><span>Project checkpoint reports</span><span>Follow-up coordination</span></div>
+</section>
+
+<section class="slide" data-title="Executive & Board Reporting">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">CASE STUDY 06 / EXECUTIVE COMMUNICATION</div><h2>Executive &amp; Board Performance Reporting</h2><p>Synthesizing fragmented information into a clear management decision agenda</p></div>
+ <div class="metric-grid four"><div class="metric"><small>REVENUE INDEX</small><strong>88</strong><span>Plan = 100</span></div><div class="metric"><small>CONTRACT INDEX</small><strong>108</strong><span>Plan = 100</span></div><div class="metric"><small>CASH COLLECTION</small><strong>76</strong><span>Plan = 100</span></div><div class="metric"><small>MARGIN INDEX</small><strong>84</strong><span>Plan = 100</span></div></div>
+ <div class="two-panels executive-panels"><div class="panel"><div class="panel-title">EXECUTIVE PERFORMANCE SCORECARD</div><div class="bar-meter"><span>Revenue</span><div class="meter-track"><i style="width:73.3%;background:#db9e36"></i><em></em></div><b>88</b></div><div class="bar-meter"><span>Contracts</span><div class="meter-track"><i style="width:90%;background:#15979c"></i><em></em></div><b>108</b></div><div class="bar-meter"><span>Collection</span><div class="meter-track"><i style="width:63.3%;background:#cb5b63"></i><em></em></div><b>76</b></div><div class="bar-meter"><span>Margin</span><div class="meter-track"><i style="width:70%;background:#db9e36"></i><em></em></div><b>84</b></div><div class="chart-explainer">Marker indicates the illustrative 100 index target.</div></div>
+ <div class="panel"><div class="panel-title">BOARD-READY DISCUSSION NOTES</div><div class="board-note"><b>01 / WHAT CHANGED</b><p>Revenue is below plan while the new-contract index is ahead of target.</p></div><div class="board-note"><b>02 / WHY IT MATTERS</b><p>Execution and collection may not immediately follow the pace of new awards.</p></div><div class="board-note"><b>03 / REQUESTED FOLLOW-UP</b><p>Confirm conversion timetable, accountable parties and supporting evidence.</p></div></div></div>
+ <div class="decision-flow"><span>FINANCIAL + OPERATIONAL INPUTS</span><b>→</b><span>VARIANCE &amp; KEY ISSUES</span><b>→</b><span>EXECUTIVE NARRATIVE</span><b>→</b><span>OWNER / ACTION / DATE</span></div>
+</section>
+
+<section class="slide" data-title="Disclosure & XBRL">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">CASE STUDY 07 / REPORTING DISCIPLINE</div><h2>Annual Report, Disclosure &amp; XBRL Support</h2><p>Supporting source reconciliation, consistent narratives and reporting readiness</p></div>
+ <div class="report-process"><span>COLLECT</span><span>RECONCILE</span><span>MAP / CROSS-CHECK</span><span>REVIEW</span><span>SUBMISSION SUPPORT</span></div>
+ <div class="two-panels disclosure-panels"><div class="panel"><div class="panel-title">MOCK RECONCILIATION CONTROL <small>Index/units · synthetic</small></div><table class="data-table"><thead><tr><th>Disclosure item</th><th>Source</th><th>Disclosure</th><th>Status</th></tr></thead><tbody><tr><td>Revenue</td><td>438</td><td>438</td><td><span class="chip ok">Match</span></td></tr><tr><td>Contracts awarded</td><td>126</td><td>126</td><td><span class="chip ok">Match</span></td></tr><tr><td>Cash balance</td><td>74</td><td>74</td><td><span class="chip ok">Match</span></td></tr><tr><td>Trade receivables</td><td>88</td><td>87</td><td><span class="chip warn">Review</span></td></tr><tr><td>Liabilities</td><td>209</td><td>209</td><td><span class="chip ok">Match</span></td></tr></tbody></table></div>
+ <div class="panel workflow-panel"><div class="panel-title">ILLUSTRATIVE REPORTING CHECKLIST</div><div class="check-row"><span class="check-icon">✓</span><span>Source data collection</span><span class="chip ok">Ready</span></div><div class="check-row"><span class="check-icon">✓</span><span>Cross-functional review</span><span class="chip ok">Ready</span></div><div class="check-row"><span class="check-icon hold">!</span><span>Variance exception resolution</span><span class="chip warn">Review</span></div><div class="check-row"><span class="check-icon">✓</span><span>Support schedule alignment</span><span class="chip ok">Ready</span></div><div class="check-row"><span class="check-icon hold">…</span><span>Final filing quality check</span><span class="chip neutral">Pending</span></div></div></div>
+ <div class="explanation-grid"><div class="bottom-insight"><b>MY ROLE</b><p>Support information collection, regulatory-reporting inputs, XBRL-related reconciliation and Annual Report content.</p></div><div class="bottom-insight"><b>CONTROL PRINCIPLE</b><p>Review mismatches before sign-off; document sources, owners and unresolved exceptions.</p></div><div class="bottom-insight"><b>WHY IT MATTERS</b><p>Promotes consistency between financial data, disclosures and management narratives.</p></div></div>
+</section>
+
+<section class="slide" data-title="Selected Deliverables">
+ <div class="slide-head"><div class="microline"></div><div class="section-kicker">SELECTED OUTPUTS / ANALYTICAL TOOLKIT</div><h2>Reconstructed Deliverables &amp; Working Tools</h2><p>Portfolio mockups illustrate formats and methods, not original or proprietary company documents</p></div>
+ <div class="deliverables-grid"><div class="deliverable"><header><b>01</b><div><strong>RKAP &amp; Scenarios</strong><small>Planning inputs, assumptions and alternatives</small></div></header><div class="tiny-bars"><i style="height:28%"></i><i style="height:46%"></i><i style="height:54%"></i><i style="height:72%"></i><i style="height:91%"></i></div></div><div class="deliverable"><header><b>02</b><div><strong>KPI Scorecards</strong><small>Performance to target and RAG monitoring</small></div></header><div class="micro-list"><span><i class="swatch green"></i><em style="width:79%"></em></span><span><i class="swatch amber"></i><em style="width:59%"></em></span><span><i class="swatch red"></i><em style="width:40%"></em></span></div></div><div class="deliverable"><header><b>03</b><div><strong>Performance Briefs</strong><small>Financial trends and operational variances</small></div></header><div class="tiny-bars"><i style="height:36%"></i><i style="height:48%"></i><i style="height:60%"></i><i style="height:69%"></i><i style="height:85%"></i></div></div><div class="deliverable"><header><b>04</b><div><strong>PMO Action Registers</strong><small>Initiatives, owners, deadlines and blockers</small></div></header><div class="micro-list"><span><i class="swatch teal"></i><em style="width:82%"></em></span><span><i class="swatch amber"></i><em style="width:72%"></em></span><span><i class="swatch teal"></i><em style="width:63%"></em></span></div></div><div class="deliverable"><header><b>05</b><div><strong>Project Controls</strong><small>Progress, milestone and cost monitoring</small></div></header><div class="tiny-bars"><i style="height:33%"></i><i style="height:51%"></i><i style="height:58%"></i><i style="height:74%"></i><i style="height:92%"></i></div></div><div class="deliverable"><header><b>06</b><div><strong>Disclosure Checks</strong><small>Source traceability and reporting quality</small></div></header><div class="micro-list"><span><i class="swatch green"></i><em style="width:85%"></em></span><span><i class="swatch green"></i><em style="width:85%"></em></span><span><i class="swatch amber"></i><em style="width:60%"></em></span></div></div></div>
+ <div class="tools-footer"><strong>TOOLS &amp; METHODS</strong><span>Advanced Excel · Microsoft PowerPoint · SAP FICO · BPC performance monitoring · KPI templates · Management review packs · Reconciliation checks</span></div>
+</section>
+
+<section class="slide closing" data-title="Closing">
+ <div class="closing-lines"></div><div class="closing-content"><div class="microline"></div><div class="section-kicker">AUDRA NESIA PRATIDINA / SELECTED WORKS</div><h2>From business data<br><span>to management clarity.</span></h2><p>Combining planning discipline, analytical structure, operational context and clear communication to support informed business decisions.</p><div class="closing-values"><article><strong>PLAN WITH DISCIPLINE</strong><span>Coordinate assumptions and actionable targets</span></article><article><strong>MONITOR WITH STRUCTURE</strong><span>Surface variances, risks, issues and progress</span></article><article><strong>REPORT FOR ACTION</strong><span>Clarify decisions, ownership and follow-through</span></article></div><div class="closing-contact"><b>CORPORATE PLANNING <i>|</i> BUSINESS PERFORMANCE <i>|</i> STRATEGIC PMO</b><a href="mailto:audranesiap@gmail.com">audranesiap@gmail.com</a></div></div>
+</section>
+
+</main>
+<footer id="screen-footer"><span>All sample financial figures, charts, scenarios and case metrics are synthetic. Role descriptions are based on professional experience.</span><span>© 2026 Audra Nesia Pratidina</span></footer>
+<script src="data.js"></script><script src="script.js"></script>
+</body>
+</html>
